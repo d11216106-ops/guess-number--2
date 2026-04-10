@@ -66,7 +66,9 @@
 
   // ── Game control ──────────────────────────────────────────────────────────
   function generateSecret() {
-    return Math.floor(Math.random() * 100) + 1;
+    const arr = new Uint32Array(1);
+    crypto.getRandomValues(arr);
+    return (arr[0] % 100) + 1;
   }
 
   function startGame() {
