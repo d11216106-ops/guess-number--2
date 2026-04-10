@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>猜數字遊戲</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>🎯 猜數字遊戲</h1>
+    <p class="subtitle">猜一個 1 到 100 之間的數字</p>
+
+    <div class="stats-bar">
+      <span id="total-games-label">累計遊戲：<strong id="total-games">0</strong></span>
+      <span id="best-label">最佳紀錄：<strong id="best-score">-</strong> 次</span>
+    </div>
+
+    <div class="game-card">
+      <div id="feedback" class="feedback" aria-live="polite"></div>
+
+      <div class="input-row">
+        <input
+          type="number"
+          id="guess-input"
+          min="1"
+          max="100"
+          placeholder="輸入數字 (1-100)"
+          aria-label="猜測數字輸入欄位"
+        />
+        <button id="submit-btn">猜！</button>
+      </div>
+      <p id="input-error" class="input-error" aria-live="polite"></p>
+
+      <div class="count-row">
+        猜測次數：<strong id="guess-count">0</strong>
+      </div>
+
+      <button id="reset-btn" class="reset-btn">🔄 重新開始</button>
+    </div>
+
+    <div class="history-card" id="history-card">
+      <h2>猜測記錄</h2>
+      <ul id="history-list" aria-label="猜測歷史記錄"></ul>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
